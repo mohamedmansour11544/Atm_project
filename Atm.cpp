@@ -225,7 +225,7 @@ int QuickWithDrawMenu()
   cout << setw(12) << " " << "[9] Exit" << endl;
   cout << "================================================\n";
   cout << "Your Balance is " << currentclient.AccountBalance << endl;
-  cout << "Choose What With Draw From [1 To 8]? ";
+  cout << "Choose What Do You Want From [1 To 9]? ";
   cin >> choice;
   cin.ignore();
   return choice;
@@ -234,6 +234,49 @@ bool Allowance_amount(int withdraw_amount, int cuurent_amount)
 {
   return cuurent_amount >= withdraw_amount;
 }
+int GetWithDrawAmount(int choice)
+{
+  switch (choice)
+  {
+  case 1:
+    return 20;
+    break;
+
+  case 2:
+    return 50;
+    break;
+
+  case 3:
+    return 100;
+    break;
+
+  case 4:
+    return 200;
+    break;
+
+  case 5:
+    return 400;
+    break;
+
+  case 6:
+    return 600;
+    break;
+
+  case 7:
+    return 800;
+    break;
+  case 8:
+    return 1000;
+    break;
+
+  default:
+    cout << "Invalid Chlice!\n";
+    cout << "Press Any Key To Continue...";
+    system("pause>0");
+    return 0;
+    break;
+  }
+}
 void QuickWithDraw()
 {
   int choice;
@@ -241,182 +284,39 @@ void QuickWithDraw()
   char do_operation = 'Y';
   choice = QuickWithDrawMenu();
   int cuurent_amount = currentclient.AccountBalance;
-  switch (choice)
+  if (choice == 9)
   {
-  case 1:
-    if (Allowance_amount(20, cuurent_amount))
-    {
-      cout << "\n\n";
-      cout << "Are You Sure To Do This Operation? ";
-      cin >> do_operation;
-      if (toupper(do_operation) == 'Y')
-      {
-        cuurent_amount -= 20;
-        cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
-      }
-      else
-      {
-        cout << "No Changing In Balance" << endl;
-      }
-    }
-    else
-    {
-      cout << "Cant Do This Operation Your Balance is " << cuurent_amount << endl;
-    }
-    break;
-  case 2:
-    if (Allowance_amount(50, cuurent_amount))
-    {
-      cout << "\n\n";
-      cout << "Are You Sure To Do This Operation? ";
-      cin >> do_operation;
-      if (toupper(do_operation) == 'Y')
-      {
-        cuurent_amount -= 50;
-        cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
-      }
-      else
-      {
-        cout << "No Changing In Balance" << endl;
-      }
-    }
-    else
-    {
-      cout << "Cant Do This Operation Balance is " << cuurent_amount << endl;
-    }
-    break;
-  case 3:
-    if (Allowance_amount(100, cuurent_amount))
-    {
-      cout << "\n\n";
-      cout << "Are You Sure To Do This Operation? ";
-      cin >> do_operation;
-      if (toupper(do_operation) == 'Y')
-      {
-        cuurent_amount -= 100;
-        cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
-      }
-      else
-      {
-        cout << "No Changing In Balance" << endl;
-      }
-    }
-    else
-    {
-      cout << "Cant Do This Operation Balance is " << cuurent_amount << endl;
-    }
-    break;
-  case 4:
-    if (Allowance_amount(200, cuurent_amount))
-    {
-      cout << "\n\n";
-      cout << "Are You Sure To Do This Operation? ";
-      cin >> do_operation;
-      if (toupper(do_operation) == 'Y')
-      {
-        cuurent_amount -= 200;
-        cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
-      }
-      else
-      {
-        cout << "No Changing In Balance" << endl;
-      }
-    }
-    else
-    {
-      cout << "Cant Do This Operation Balance is " << cuurent_amount << endl;
-    }
-    break;
-  case 5:
-    if (Allowance_amount(400, cuurent_amount))
-    {
-      cout << "\n\n";
-      cout << "Are You Sure To Do This Operation? ";
-      cin >> do_operation;
-      if (toupper(do_operation) == 'Y')
-      {
-        cuurent_amount -= 400;
-        cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
-      }
-      else
-      {
-        cout << "No Changing In Balance" << endl;
-      }
-    }
-    else
-    {
-      cout << "Cant Do This Operation Balance is " << cuurent_amount << endl;
-    }
-    break;
-  case 6:
-    if (Allowance_amount(600, cuurent_amount))
-    {
-      cout << "\n\n";
-      cout << "Are You Sure To Do This Operation? ";
-      cin >> do_operation;
-      if (toupper(do_operation) == 'Y')
-      {
-        cuurent_amount -= 600;
-        cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
-      }
-      else
-      {
-        cout << "No Changing In Balance" << endl;
-      }
-    }
-    else
-    {
-      cout << "Cant Do This Operation Balance is " << cuurent_amount << endl;
-    }
-    break;
-  case 7:
-    if (Allowance_amount(800, cuurent_amount))
-    {
-      cout << "\n\n";
-      cout << "Are You Sure To Do This Operation? ";
-      cin >> do_operation;
-      if (toupper(do_operation) == 'Y')
-      {
-        cuurent_amount -= 800;
-        cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
-      }
-      else
-      {
-        cout << "No Changing In Balance" << endl;
-      }
-    }
-    else
-    {
-      cout << "Cant Do This Operation Balance is " << cuurent_amount << endl;
-    }
-    break;
-  case 8:
-    if (Allowance_amount(1000, cuurent_amount))
-    {
-      cout << "\n\n";
-      cout << "Are You Sure To Do This Operation? ";
-      cin >> do_operation;
-      if (toupper(do_operation) == 'Y')
-      {
-        cuurent_amount -= 1000;
-        cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
-      }
-      else
-      {
-        cout << "No Changing In Balance" << endl;
-      }
-    }
-    else
-    {
-      cout << "Cant Do This Operation Balance is " << cuurent_amount << endl;
-    }
-    break;
-  case 9:
     return MainAtm();
-    break;
-  default:
-    cout << "Invlaid Choice " << endl;
-    break;
+  }
+  short withdrawamount = GetWithDrawAmount(choice);
+  if (withdrawamount == 0)
+  {
+    system("cls");
+    return QuickWithDraw();
+  }
+  if (!Allowance_amount(withdrawamount, cuurent_amount))
+  {
+    cout << "The Amount Excceds Your Balance , Make Another Choice!\n";
+    cout << "Your Balance is " << cuurent_amount << " \n";
+    cout << "Press Any Key To Continue...";
+    system("pause>0");
+    system("cls");
+    return QuickWithDraw();
+  }
+  else
+  {
+    cout << "\n\n";
+    cout << "Are You Sure To Do This Operation[y/n]? ";
+    cin >> do_operation;
+    if (toupper(do_operation) == 'Y')
+    {
+      cuurent_amount -= withdrawamount;
+      cout << "Done Successfuly ,New Balance is " << cuurent_amount << endl;
+    }
+    else
+    {
+      cout << "\nNo Changing In Balance" << endl;
+    }
   }
   SaveClientDataByAccountNumber(currentclient.AccountNumber, ClientsFileName, data, cuurent_amount);
   LoadClientData(currentclient.AccountNumber);
@@ -445,7 +345,7 @@ void NormalWithDraw()
   cin.ignore();
   if (!Allowance_amount(amount, cuurent_amount))
   {
-    cout << "The Amount Excceds Your Balance , Make Another Choice!\n";
+    cout << "The Amount Excceds Your Balance ,Please Try Again!\n";
     cout << "Your Balance is " << cuurent_amount << " \n";
     cout << "Press Any Key To Continue...";
     system("pause>0");
